@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script lang="javascript" src="../dist/xlsx.full.min.js"></script>
+    <script lang="javascript" src="../dist/alasql.js"></script>
+    <script src="index.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-blue-50">
+    <div>
+      <div class="px-6 py-4 bg-white">
+        <h1 class="font-medium text-center">F&B Demo</h1>
+      </div>
+
+      <div class="px-6 py-4 flex">
+          <div>
+              <form class="flex gap-8">
+                  <div class="flex flex-col">
+                      <label for="cars">Month:</label>
+                      <select name="cars" id="cars" class="bg-white border-gray-300 border-2 px-2">
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</October>
+                        <option value="November">November</November>
+                        <option value="December">December</December>
+                      </select>
+                  </div>
+
+                  <div class="flex flex-col">
+                      <label for="cars">State:</label>
+                      <select name="cars" id="cars" class="bg-white border-gray-300 border-2 px-2">
+                        <option value="">--Select--</option>
+                        <!-- TODO: Add Options Dynamically -->
+                      </select>
+                    </div>
+                    
+                    <div class="flex flex-col">
+                      <label for="cars">City:</label>
+                      <select name="cars" id="cars" class="bg-white border-gray-300 border-2 px-2">
+                        <option value="">--Select--</option>
+                        <!-- TODO: Add Options Dynamically -->
+                      </select>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="px-6 py-4 text-center text-2xl font-bold text-gray-800 bg-white">
+        January 2020
+      </div>
+    </div>
+  </body>
+</html>
