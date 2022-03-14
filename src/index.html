@@ -6,9 +6,13 @@
     <link href="/dist/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
     <script lang="javascript" src="../dist/xlsx.full.min.js"></script>
     <script lang="javascript" src="../dist/alasql.js"></script>
-    <script src="index.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -62,6 +66,29 @@
       <div class="px-6 py-4 text-center text-2xl font-bold text-gray-800 bg-white">
         January 2020
       </div>
+
+      <div class="semicircle-charts-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:h-72 mt-2 px-4">
+        <div id="sales-semicircle" class="col-span-1 border-t-8 border-gray-300 rounded-md"></div>
+        <div id="profits-semicircle" class="col-span-1 border-t-8 border-gray-300 rounded-md"></div>
+        <div class="col-span-1 flex items-center justify-center flex-col gap-4 border-t-8 border-gray-300 rounded-md shadow-sm bg-white h-72">
+          <h3 class="text-3xl font-semibold text-gray-600">Average Bill Value</h3>
+          <div class="text-5xl font-bold text-gray-700">24</div>
+        </div>
+        <div class="col-span-1 flex items-center justify-center flex-col gap-4 border-t-8 border-gray-300 rounded-md shadow-sm bg-white h-72">
+          <h3 class="text-3xl font-semibold text-gray-600">Invoices Raised</h3>
+          <div class="text-5xl font-bold text-gray-700">37K</div>
+        </div>
+      </div>
+      <div class="semicircle-charts-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:h-96 mt-4 px-4">
+        <div id="sales-pie" class="col-span-1 border-t-8 border-gray-300 rounded-md"></div>
+        <div id="online-marketplace-pie" class="col-span-1 border-t-8 border-gray-300 rounded-md"></div>
+        <div id="prod-category-share" class="col-span-1 border-t-8 border-gray-300 rounded-md"></div>
+      </div>
+      <div class="map-row-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 h-128 mt-4 px-4">
+        <div id="map-chart" class="col-span-1 border-t-8 border-gray-300 rounded-md"></div>
+        <div id="sales-by-location-pie" class="col-span-1 border-t-8 border-gray-300 rounded-md"></div>
+      </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
