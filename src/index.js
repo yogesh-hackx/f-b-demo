@@ -576,6 +576,283 @@ const renderSalesByLocChart = async () => {
 };
   Highcharts.mapChart('sales-by-location-pie', chartOptions)
 }
+const renderCitySalesBarChart = async () => {
+
+  const chartOptions = {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'City wise sales & profits'
+    },
+    xAxis: {
+      title: 'City',
+        categories: [
+          'Ahmedabad', 'Bangalore',
+          'Baroda',    'Belgavi',
+          'Chennai',   'Delhi',
+          'Gurgaon',   'Indore',
+          'Jaipur',    'Kochi',
+          'Kolkata',   'Mumbai',
+          'Mysuru',    'Nagpur',
+          'Pune',      'Sangli',
+          'Shimla',    'Siliguri'
+        ]
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Sales, Prof...'
+        }
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      itemMarginTop: 5,
+      itemMarginBottom: 5,
+      reversed: true,
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
+    series: [
+      {
+        name: 'Profits',
+        data: [
+          { name: 'Ahmedabad', y: 3974.4276 },
+          { name: 'Bangalore', y: 58899.0248 },
+          { name: 'Baroda', y: 5022.3009 },
+          { name: 'Belgavi', y: -2042.4257 },
+          { name: 'Chennai', y: 4417.4782 },
+          { name: 'Delhi', y: 38864.2912 },
+          { name: 'Gurgaon', y: 30995.7282 },
+          { name: 'Indore', y: 3035.5854 },
+          { name: 'Jaipur', y: 2583.5601 },
+          { name: 'Kochi', y: 4521.8563 },
+          { name: 'Kolkata', y: 43198.2389 },
+          { name: 'Mumbai', y: 66203.3744 },
+          { name: 'Mysuru', y: 16342.5827 },
+          { name: 'Nagpur', y: -17936.9459 },
+          { name: 'Pune', y: -17418.6165 },
+          { name: 'Sangli', y: -11440.5857 },
+          { name: 'Shimla', y: 4569.2771 },
+          { name: 'Siliguri', y: 2284.8426 }
+        ],
+        color: '#F6ABBB'
+    },
+      {
+        name: 'Sales',
+        data: [
+          { name: 'Ahmedabad', y: 33347.77 },
+          { name: 'Bangalore', y: 324363.16 },
+          { name: 'Baroda', y: 34927.59 },
+          { name: 'Belgavi', y: 33796.03 },
+          { name: 'Chennai', y: 34218.9 },
+          { name: 'Delhi', y: 176813.79 },
+          { name: 'Gurgaon', y: 140094.32 },
+          { name: 'Indore', y: 32577.19 },
+          { name: 'Jaipur', y: 34482.51 },
+          { name: 'Kochi', y: 37142.99 },
+          { name: 'Kolkata', y: 104629.67 },
+          { name: 'Mumbai', y: 274147.24 },
+          { name: 'Mysuru', y: 105052.72 },
+          { name: 'Nagpur', y: 32676.63 },
+          { name: 'Pune', y: 33681.1 },
+          { name: 'Sangli', y: 35144.47 },
+          { name: 'Shimla', y: 33900.58 },
+          { name: 'Siliguri', y: 35840.53 }
+        ],
+        color: '#CC115E'
+    },
+  ]
+};
+  Highcharts.mapChart('city-bar-chart', chartOptions)
+}
+const renderDaySalesBarChart = async () => {
+  const chartOptions = {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Day wise sales'
+    },
+    tooltip: {
+      pointFormat: 'Average Sales: <b>{point.y:.1f}%</b>'
+    },
+    xAxis: {
+      title: 'City',
+        categories: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday'
+        ]        
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Average Sales'
+        }
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      itemMarginTop: 5,
+      itemMarginBottom: 5,
+      reversed: true,
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal'
+        }
+    },
+    series: [
+      {
+        name: 'Sales',
+        data: [
+          { name: 'Monday', y: 23.408528960070054 },
+          { name: 'Tuesday', y: 24.105967529618088 },
+          { name: 'Wednesday', y: 24.730690966010556 },
+          { name: 'Thursday', y: 24.758595706618813 },
+          { name: 'Friday', y: 24.784191636851357 },
+          { name: 'Saturday', y: 25.720188953488254 },
+          { name: 'Sunday', y: 23.40694096601059 }
+        ],
+        color: '#CC115E'
+    },
+  ]
+};
+  Highcharts.mapChart('day-sales-bar-chart', chartOptions)
+}
+const renderMonthSalesSplineChart = async () => {
+  const chartOptions = {
+    chart: {
+        type: 'spline'
+    },
+    title: {
+        text: 'Month Wise Sales'
+    },
+    xAxis: {
+        categories: [
+          'April',    'May',
+          'June',     'July',
+          'August',   'September',
+          'October',  'November',
+          'December', 'January',
+          'February', 'March'
+        ]
+    },
+    yAxis: {
+        title: {
+            text: 'Sales'
+        },
+    },
+    tooltip: {
+        crosshairs: true,
+        shared: true,
+        title: '',
+        pointFormat: 'Sales: <b>{point.y:.0f}</b>'
+    },
+    plotOptions: {
+        spline: {
+            marker: {
+                radius: 4,
+                lineColor: '#CC115E',
+                lineWidth: 1
+            }
+        }
+    },
+    series: [{
+        name: 'Sales',
+        marker: {
+            symbol: 'circle'
+        },
+        color: '#CC115E',
+        data: [
+          122404.41000000195,
+          132208.26000000275,
+          122974.02000000197,
+          129648.07000000158,
+          130747.11000000138,
+          133209.60000000184,
+          129773.74000000188,
+          124345.21000000025,
+          123478.06000000214,
+          138197.05000000188,
+          119115.71999999904,
+          130735.9400000013
+        ]
+    }]
+}
+  Highcharts.mapChart('month-sales-spline-chart', chartOptions)
+}
+
+const renderQuarterWiseSalesChart = async () => {
+  const chartOptions = {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false,
+      },
+      title: {
+        text: 'Product Category Share',
+        align: 'left',
+      },
+      tooltip: {
+        pointFormat: 'Quarter: <b>{point.name}</b><br />Percentage: <b>{point.percentage:.1f}%</b>'
+      },
+      accessibility: {
+        point: {
+          valueSuffix: '%'
+        },
+      },
+      plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                },
+                format: '{point.percentage:.1f}'
+            },
+            startAngle: 0,
+            endAngle: 360,
+            center: ['50%', '50%'],
+            size: '100%',
+            showInLegend: true,
+        },
+      },
+      legend : {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+        itemMarginTop: 5,
+        itemMarginBottom: 5,
+        labelFormatter: function () {
+          return `<div class="text-gray-300 font-black mr-4">${this.name}</div>` + ' ' + `<div class="text-gray-300 font-light ml-4">(${(this.y/100000).toFixed(2)}L)</div>`;
+      }
+      },
+    series: [{
+        type: 'pie',
+        innerSize: '60%',
+        data: [
+          { name: 'Q1', y: 377586.68999999104, color: '#F9CCD5' },
+          { name: 'Q2', y: 393604.7799999916, color: '#CC115E' },
+          { name: 'Q3', y: 377597.0099999928, color: '#FCE7EB' },
+          { name: 'Q4', y: 388048.70999999496, color: '#F27D9B' },
+        ]              
+    }]
+};
+  Highcharts.mapChart('quarter-wise-sales-pie', chartOptions)
+}
 
   const renderCharts = () => {
     renderSalesSemiCircle();
@@ -584,7 +861,11 @@ const renderSalesByLocChart = async () => {
     renderOnlineMarketPie();
     renderProdCategory();
     renderMapChart();
-    renderSalesByLocChart()
+    renderSalesByLocChart();
+    renderCitySalesBarChart();
+    renderDaySalesBarChart();
+    renderMonthSalesSplineChart();
+    renderQuarterWiseSalesChart();
   }
 
 renderCharts()
